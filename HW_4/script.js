@@ -6,10 +6,14 @@ const count = (function() {
   };
 })();
 
-  function createArray(...args) {
-    if (args.length === 0) {
-      return [];
+const createArray= (() => {
+  let args = [];
+  return (...newArgs) => {
+    if (newArgs.length > 0) {
+      args.push(...NewArgs);
     } else {
-      return args;
+      args = [];
     }
-  }
+    return args;
+  };
+})();
